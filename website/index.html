@@ -1,0 +1,68 @@
+<!doctype html>
+<!--
+LATAM Partner Training Team \m/
+-->
+
+<html lang="en">
+    <head>
+        <title>AWS STP Containers Training</title>
+        <style>
+            @font-face {
+                font-family: AmazonEmber;
+                src: url(font/AmazonEmber_Lt.ttf);
+            }
+            div {
+                font-family: AmazonEmber;
+            }
+            h1 {
+                color: #505050;
+                font-family: AmazonEmber;
+                font-size: 200%;
+            }
+            h2 {
+                color: gray;
+                font-family: AmazonEmber;
+                font-size: 130%;
+            }
+            p  {
+                color: gray;
+                font-family: AmazonEmber;
+                font-size: 120%;
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script type="text/javascript">
+
+        var metadata =  function () {
+        var response = $.ajax({
+            type: "GET",
+            contentType: "application/json",
+            url: 'metadata.json',
+            dataType: "json",
+            success: function (json) {
+                response = json
+                podId = json.podId
+                document.getElementById("podId").innerHTML = 'Kubernetes Pod ID: '+podId;
+                console.log(response)
+                console.log(podId)
+            }
+        });
+        return response;
+    }();
+
+    </script>
+    </head>
+    <body>
+
+    <!-- Content -->
+
+    <h1>Welcome to the STP Training "Containers on AWS" | EKS Lab</h1>
+    <hr style="width:60%;text-align:left;margin-left:0">
+    <h2 id="podId"></h2>
+    <h2>Maintainer: AWS Partner Training Team </h2>
+    <h2>Version: 1 </h2>
+    <h1></h1>
+    <p style="margin-top:5ex">Powered by <a rel="nofollow" href="https://aws.amazon.com/es/partners/training/latam">AWS Partner Training Team</p>
+    <img src="images/undraw/aws-training.png" width="250">
+  </body>
+</html>
